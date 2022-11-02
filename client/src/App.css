@@ -1,0 +1,30 @@
+.App {
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.informationWrapper{
+  display: flex;
+  flex-direction: column;
+  justify-content:center;
+  align-items: center;
+}
+
+.informationWrapper input{
+  width:250px;
+  font-size: 20px;
+  padding-left: 10px;
+  margin: 5px;
+}
+
+.informationWrapper button{
+  margin-top: 20px;
+  width:250px;
+  font-size: 20px;
+  padding-left: 10px;
+}
+
+.informationWrapper button:hover{
+  cursor: pointer;
+}
