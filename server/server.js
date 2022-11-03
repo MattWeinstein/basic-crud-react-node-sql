@@ -3,17 +3,16 @@ const app = express();
 const mysql = require('mysql2');
 const cors = require('cors')
 require('dotenv').config()
-console.log(`${process.env.ROOT_PASSWORD}`)
 
-app.use(cors())
-app.use(express.json()) // Middleware to parse JSON
+app.use(cors());
+app.use(express.json()); // Middleware to parse JSON
 
 const db = mysql.createConnection({
     user: 'root',
     host: 'localhost',
     database: 'employee_system_crud',
     password: `${process.env.ROOT_PASSWORD}`
-})
+});
 
 app.post('/create',(req,res)=>{
     const name = req.body.name;
@@ -23,15 +22,14 @@ app.post('/create',(req,res)=>{
     const wage = req.body.wage;
     /* Question marks will make the data secure. The second argument of an array will replace the question marks*/
     db.query('INSERT INTO employees (name,age,country,position,wage) VALUES (?,?,?,?,?)',
-    [name,age,country,position,wage]),
-    (err,res) =>{
-        console.log('hello')
+    [name,age,country,position,wage],
+    (err,results) => {
         if(err){
             console.log(err)
         } else{
-            res.send("values inserted")
+            res.send('something')
         }
-    }
+    })
 })
 
 app.listen(3001,()=>{

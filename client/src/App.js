@@ -18,7 +18,7 @@ const addEmployee = () =>{
     position: position,
     wage: wage
   }).then(()=>{
-    console.log('success')
+    console.log("success - i'm gonna cum")
   }).catch((err)=>{
     console.log(err)
   }) 
