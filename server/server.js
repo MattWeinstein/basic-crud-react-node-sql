@@ -20,7 +20,7 @@ app.post('/create',(req,res)=>{
     const country = req.body.country;
     const position = req.body.position;
     const wage = req.body.wage;
-    /* Question marks will make the data secure. The second argument of an array will replace the question marks*/
+
     db.query('INSERT INTO employees (name,age,country,position,wage) VALUES (?,?,?,?,?)',
     [name,age,country,position,wage],
     (err,results) => {
